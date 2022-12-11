@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.elevatorgame.deneme2Controller">
    <children>
@@ -20,26 +21,26 @@
             <Separator layoutY="177.0" prefWidth="200.0" />
             <Separator layoutY="236.0" prefHeight="3.0" prefWidth="200.0" />
             <Separator layoutY="295.0" prefHeight="3.0" prefWidth="200.0" />
-            <TextField layoutX="15.0" layoutY="252.0" prefHeight="25.0" prefWidth="32.0" text="0" />
-            <TextField layoutX="15.0" layoutY="195.0" prefHeight="25.0" prefWidth="32.0" text="1" />
-            <TextField layoutX="15.0" layoutY="134.0" prefHeight="25.0" prefWidth="32.0" text="2" />
-            <TextField layoutX="15.0" layoutY="75.0" prefHeight="25.0" prefWidth="32.0" text="3" />
-            <TextField layoutX="15.0" layoutY="21.0" prefHeight="25.0" prefWidth="32.0" text="4" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="174.0" layoutY="240.0" rotate="180.0">
+            <Text layoutX="14.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+            <Text layoutX="9.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
+            <Text layoutX="9.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+            <Text layoutX="9.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
+            <Text layoutX="9.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="131.0" layoutY="238.0">
                <image>
-                  <Image url="@../../../../../../../../Downloads/back-button.png" />
+                  <Image url="@back-button.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="131.0" layoutY="240.0">
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="177.0" layoutY="238.0" rotate="180.0">
                <image>
-                  <Image url="@../../../../../../../../Downloads/back-button.png" />
+                  <Image url="@back-button.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
       <Button layoutX="138.0" layoutY="302.0" mnemonicParsing="false" onAction="#upHandler" prefWidth="47.0" text="Up" />
       <Separator layoutX="389.0" orientation="VERTICAL" prefHeight="400.0" />
-      <Button layoutX="207.0" layoutY="302.0" mnemonicParsing="false" text="Down" />
-      <TextField layoutX="61.0" layoutY="35.0" onAction="#currentFloor" prefHeight="25.0" prefWidth="160.0" />
+      <Button layoutX="207.0" layoutY="302.0" mnemonicParsing="false" onAction="#downHandler" text="Down" />
+      <Label fx:id="welcomeText" layoutX="70.0" layoutY="51.0" prefHeight="33.0" prefWidth="184.0" text="Label" />
    </children>
 </AnchorPane>

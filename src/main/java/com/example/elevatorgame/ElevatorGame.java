@@ -8,9 +8,8 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 public class ElevatorGame extends Application {
     public static Elevator elevator = new Elevator();
@@ -28,11 +27,15 @@ public class ElevatorGame extends Application {
         Scene scene = new Scene(root,600,500);
         stage.setTitle("Elevator Game");
         stage.setScene(scene);
-        //stage.setResizable(false);
+        stage.setResizable(false);
         stage.show();
     }
 
     public static void main(String[] args) {
+        Person person = new Person("Ayşe");
+        Person person1 = new Person("mehmet");
+        elevator.enter(person,3);
+        elevator.enter(person1,4);
         launch();
     }
 }

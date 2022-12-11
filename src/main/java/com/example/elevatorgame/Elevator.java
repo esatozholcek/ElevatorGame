@@ -6,8 +6,9 @@ package com.example.elevatorgame;
 public class Elevator {
 
     private int minFloor = 0;
-    private int maxFloor = 10;
+    private int maxFloor = 5;
     private int capacity;
+
     private int currentFloor;
     private MyStack people;
     private static int travelMeter;
@@ -57,10 +58,12 @@ public class Elevator {
         else {
             travelMeter += Math.abs((floor-currentFloor));
             this.currentFloor = floor;
-
-            if (((ElevatorPerson) people.peek()).getTarget() == this.currentFloor){
-                System.out.println(( (ElevatorPerson) people.peek()).getPerson().getName() + " is out.");
-                System.out.println( people.pop().toString() );
+            int i=0;
+            for(i=0; i < people.getSize();i++) {
+                if (((ElevatorPerson) people.peek(i)).getTarget() == this.currentFloor){
+                    System.out.println(( (ElevatorPerson) people.peek(i)).getPerson().getName() + " is out.");
+                    System.out.println( people.pop(i).toString() );
+                }
             }
             System.out.println(toString());
         }
@@ -68,7 +71,7 @@ public class Elevator {
 
     public void releaseEveryone(){
         while (!isEmpty()){
-            goToFloor(( (ElevatorPerson) people.peek() ).getTarget());
+            goToFloor(( (ElevatorPerson) people.peek(0) ).getTarget());
         }
     }
 
@@ -86,6 +89,15 @@ public class Elevator {
 
     public int getCurrentFloor() {
         return this.currentFloor;
+    }
+    public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
+    }
+    public int getMinFloor() {
+        return this.minFloor;
+    }
+    public int getMaxFloor() {
+        return this.maxFloor;
     }
 
 }
