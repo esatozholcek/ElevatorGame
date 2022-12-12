@@ -8,17 +8,18 @@ public class Elevator {
     private int minFloor = 0;
     private int maxFloor = 5;
     private int capacity;
+    private int numReachedPeople=0;
 
     private int currentFloor;
     private MyStack people;
     private static int travelMeter;
 
     Elevator() {
-        this.currentFloor = 2;
+        this.currentFloor = 0;
         people = new MyStack();
         this.capacity = 4;
         this.minFloor = 0;
-        this.maxFloor = 10;
+        this.maxFloor = 7;
     }
 
     Elevator(int size, int minFloor, int maxFloor) {
@@ -58,20 +59,21 @@ public class Elevator {
         else {
             travelMeter += Math.abs((floor-currentFloor));
             this.currentFloor = floor;
-            int i=0;
-            for(i=0; i < people.getSize();i++) {
-                if (((ElevatorPerson) people.peek(i)).getTarget() == this.currentFloor){
-                    System.out.println(( (ElevatorPerson) people.peek(i)).getPerson().getName() + " is out.");
-                    System.out.println( people.pop(i).toString() );
+            if(people.peek() != null) {
+                if (((ElevatorPerson) people.peek()).getTarget() == this.currentFloor) {
+                    numReachedPeople++;
+                    System.out.println(((ElevatorPerson) people.peek()).getPerson().getName() + " is out.");
+                    System.out.println(people.pop().toString());
                 }
             }
-            System.out.println(toString());
+                System.out.println(toString());
+
         }
     }
 
     public void releaseEveryone(){
         while (!isEmpty()){
-            goToFloor(( (ElevatorPerson) people.peek(0) ).getTarget());
+            goToFloor(( (ElevatorPerson) people.peek() ).getTarget());
         }
     }
 
@@ -98,6 +100,18 @@ public class Elevator {
     }
     public int getMaxFloor() {
         return this.maxFloor;
+    }
+    public int getNumReachedPeople() {
+        return numReachedPeople;
+    }
+    public String getNameFirstPerson() {
+        if(((ElevatorPerson)people.peek()) == null) {
+            return "Elevator is empty";
+        }
+        return (((ElevatorPerson) people.peek()).getPerson().getName());
+    }
+    public int getPeopleSize() {
+        return people.getSize();
     }
 
 }

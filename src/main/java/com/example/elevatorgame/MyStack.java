@@ -13,13 +13,18 @@ public class MyStack {
         return list.size();
     }
 
-    public Object peek(int index) {
-        return list.get(index);
+    public Object peek() {
+        if (isEmpty() == false) {
+            return list.get(getSize() - 1);
+        } else {
+            return null;
+        }
+
     }
 
-    public Object pop(int index) {
-        Object o = list.get(index);
-        list.remove(index);
+    public Object pop() {
+        Object o = list.get(getSize() - 1);
+        list.remove(getSize() - 1);
         return o;
     }
 
