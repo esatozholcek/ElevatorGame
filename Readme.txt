@@ -1,9 +1,3 @@
-Mahmut Esat ÖZHÖLÇEK 20050111068
-Gürkan Ağır  20050111073
-Mehmet Duman  20050111005
-
-
-
 How To Play The Game ?
 
 Move the Elevator between 0-10 Floors with "UP" and "DOWN" buttons.
